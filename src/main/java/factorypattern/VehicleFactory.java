@@ -2,10 +2,8 @@ package factorypattern;
 
 class VehicleFactory {
 
-    static Vehicle makeVehicle(String stringVehicle) {
-        boolean validInput = false;
-
-        do {
+    static Vehicle makeVehicle(String stringVehicle) throws NumberFormatException {
+        try {
             int vehicleNumber = Integer.parseInt(stringVehicle);
 
             switch (vehicleNumber) {
@@ -19,6 +17,10 @@ class VehicleFactory {
                     System.out.println("Please enter a valid command.");
                     return null;
             }
-        } while (validInput);
+        } catch (NumberFormatException e) {
+            System.out.println("Input is not a number.");
+            return null;
+        }
+
     }
 }
