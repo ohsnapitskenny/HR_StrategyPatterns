@@ -12,8 +12,22 @@ class PizzaFactoryTest {
 
         Assertions.assertNotNull(pizza);
         Assertions.assertEquals(expectedPizzaName, pizza.getDescription());
-//
-
     }
+
+    @Test
+    void createPizzaThatIsNotOnMenu() {
+        String stringPizza = "9999";
+        Pizza pizza = PizzaFactory.makePizza(stringPizza);
+        Assertions.assertNull(pizza);
+    }
+
+    @Test
+    void createPizzaWithWrongInput() {
+        String stringPizza = "a";
+        Pizza pizza = PizzaFactory.makePizza(stringPizza);
+        Assertions.assertNull(pizza);
+    }
+
+
 
 }
