@@ -24,7 +24,6 @@ public class Main {
         Pizza pizza2 = PizzaFactory.makePizza("1");
         pizzas[0] = pizza1;
         pizzas[1] = pizza2;
-
 //        pizzas.add(pizza1);
 //        pizzas.add(pizza2);
     }
